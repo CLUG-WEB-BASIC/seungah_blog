@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{%block contents%}
+    <form action = "{% url 'update_blog' blog.id %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">Title</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" value="{{ blog.title }}" name ="title">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Text</label>
+            <textarea class="form-control" id="exampleInputPassword1" rows= "10" name ="body">{{ blog.body }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{%endblock%}
+
+
+<!--
+m- 여백을 설정
+
+p- 패딩을 설정합니다
+
+t- 여백 상단 또는 패딩 상단 설정
+
+b -margin-bottom 또는 padding-bottom을 설정합니다.
+
+l- 여백-왼쪽 또는 패딩-왼쪽 설정
+
+r- 오른쪽 여백 또는 오른쪽 여백을 설정
+
+x -padding-left 및 padding-right 또는 margin-left 및 margin-right를 모두 설정합니다.
+
+y -padding-top 및 padding-bottom 또는 margin-top 및 margin-bottom을 모두 설정합니다.
+
+공백 -요소의 4면 모두에 여백 또는 패딩을 설정합니다. -->
